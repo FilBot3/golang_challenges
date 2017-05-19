@@ -1,6 +1,6 @@
-package hello_world
+package helloWorld
 
-func Print_Hello() (hello_world string) {
+func PrintHello() (hello_world string) {
 	hello_world = "Hello World"
 	return hello_world
 }

@@ -10,11 +10,18 @@ import (
 )
 
 func main() {
-    fmt.Println(hw.Print_Hello())
+    fmt.Println(hw.PrintHello())
     
     fmt.Print("Please enter your name: ")
-	reader := bufio.NewReader(os.Stdin)
-	name, _ := reader.ReadString('\n')
-    fmt.Println(pn.Print_Name(name))
-    fmt.Println(sp.Say_Hello_To_Specific_Person(name))
+    scanner := bufio.NewScanner(os.Stdin)
+    scanner.Scan()
+    name := scanner.Text()
+    fmt.Println(name)
+    
+    for i,ch := range name {
+		fmt.Printf("[%3d] %c %d\n", i,ch,ch)
+	}
+
+    fmt.Println(pn.PrintName(name))
+    fmt.Println(sp.SayHelloToSpecificPerson(name))
 }

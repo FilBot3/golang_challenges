@@ -1,19 +1,19 @@
-package specific_person
+package specificPerson
 
 import (
 	"strings"
 )
 
-func Say_Hello_To_Specific_Person(name string) (result string) {
+func SayHelloToSpecificPerson(name string) (result string) {
 	switch {
 	case strings.TrimRight(name, "\n") == "Phillip":
 		result = "Hello Phillip"
-        return result
-	case name == "Phil\n":
+		return result
+	case name == "Phil":
 		result = "Hello Phil"
-        return result
+		return result
 	default:
 		result = "You're not authorized to use this program."
-        return result
+		return result
 	}
 }
