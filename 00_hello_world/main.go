@@ -1,9 +1,6 @@
-package main
+package hello_world
 
-import (
-	"fmt"
-)
-
-func main() {
-	fmt.Println("Hello World!")
+func Print_Hello() (hello_world string) {
+	hello_world = "Hello World"
+	return hello_world
 }

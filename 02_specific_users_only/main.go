@@ -1,22 +1,19 @@
 package specific_person
 
 import (
-	"bufio"
-	"fmt"
-	"os"
 	"strings"
 )
 
-func Say_Hello_To_Specific_Person() {
-	fmt.Print("Please enter your name: ")
-	reader := bufio.NewReader(os.Stdin)
-	name, _ := reader.ReadString('\n')
+func Say_Hello_To_Specific_Person(name string) (result string) {
 	switch {
 	case strings.TrimRight(name, "\n") == "Phillip":
-		fmt.Println("Hello Phillip")
+		result = "Hello Phillip"
+        return result
 	case name == "Phil\n":
-		fmt.Println("Hello Phil")
+		result = "Hello Phil"
+        return result
 	default:
-		fmt.Println("You're not authorized to use this program.")
+		result = "You're not authorized to use this program."
+        return result
 	}
 }

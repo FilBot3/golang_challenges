@@ -1,14 +1,10 @@
-package main
+package accept_user_input
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 )
 
-func main() {
-	fmt.Print("Please enter your name: ")
-	reader := bufio.NewReader(os.Stdin)
-	name, _ := reader.ReadString('\n')
-	fmt.Println("Your name is:", name)
+func Print_Name(name string) (result string) {
+    result = fmt.Sprintf("Your name is: %s", name)
+    return result
 }
