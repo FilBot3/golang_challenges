@@ -1,0 +1,7 @@
+# Vim Files
+*~
+*.sw[a-z0-9]
+
+# Golang files
+*.a
+*.exe
