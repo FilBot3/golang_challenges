@@ -72,6 +72,9 @@ namespace :go do
             Dir.chdir('02_specific_users_only')
             sh "go test"
             Dir.chdir('../')
+            sh "echo Phillip| go run main.go"
+            sh "echo Phillip | go run main.go"
+            sh "echo \"Phillip\" | go run main.go"
         end
     end
 end
