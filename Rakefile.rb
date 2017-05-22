@@ -27,25 +27,32 @@ namespace :go do
             sh "go fmt main.go"
             Dir.chdir('../')
         end
+
+	desc 'Format 03_sum_of_numbers_to_n'
+	task :three do
+	    Dir.chdir('03_sum_of_numbers_to_n')
+	    sh 'go fmt main.go'
+	    Dir.chdir('../')
+	end
     end
     
     namespace :install do
         desc "Install 00_hello_world"
-        task :zero => [ 'go:format:zero' ] do
+        task :zero do
             Dir.chdir('00_hello_world')
             sh "go install"
             Dir.chdir('../')
         end
         
         desc "Install 01_accept_user_input"
-        task :one => [ "go:format:one" ] do
+        task :one do
             Dir.chdir('01_accept_user_input')
             sh "go install"
             Dir.chdir('../')
         end
         
         desc "Install 02_specific_users_only"
-        task :two => [ 'go:format:two' ] do
+        task :two do
             Dir.chdir('02_specific_users_only')
             sh "go install"
             Dir.chdir('../')
@@ -54,21 +61,21 @@ namespace :go do
     
     namespace :test do
         desc "Run tests for 00_hello_world"
-        task :zero => [ "go:install:zero" ] do
+        task :zero do
             Dir.chdir('00_hello_world')
             sh "go test"
             Dir.chdir('../')
         end
         
         desc "Run tests for 01_accept_user_input"
-        task :one => [ "go:install:one" ] do
+        task :one do
             Dir.chdir('01_accept_user_input')
             sh "go test"
             Dir.chdir('../')
         end
         
         desc "Run tests for 02_specific_users_only"
-        task :two => [ "go:install:two" ] do
+        task :two  do
             Dir.chdir('02_specific_users_only')
             sh "go test"
             Dir.chdir('../')
@@ -76,5 +83,12 @@ namespace :go do
             sh "echo Phillip | go run main.go"
             sh "echo \"Phillip\" | go run main.go"
         end
+
+	desc 'Run tests for 03_sum_of_numbers_to_n'
+	task :three do
+	    Dir.chdir('03_sum_of_numbers_to_n')
+	    sh 'go test'
+	    Dir.chdir('../')
+	end
     end
 end
